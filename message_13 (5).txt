@@ -5,13 +5,7 @@ local g = getrawmetatable(game)
 local oldindex = g.namecall
 setreadonly(g,false)
 g.namecall = newcclosure(function(Self,...)
-    local method = getnamecallmethod() 
-    if Self == game.Players.LocalPlayer and tostring(method) == "Kick" then
-        return
-    end
-    return oldindex(Self,...)
-end)
-
+    
 for _,v in pairs(game:GetDescendants()) do
     if v.Name == "UaAloLaSaoZ" and v.Name == "DayLaCombatNha" then
         v:Destroy()
